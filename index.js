@@ -33,7 +33,7 @@ app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
-app.use("/assets", express.static(path.join(__dirname, "public/assets")));
+// app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 /* File Storage */
 const storage = multer.diskStorage({
@@ -56,7 +56,7 @@ app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 app.use("/", (req, res) => {
-    res.send("Hello to API");
+    res.send("Hello to Memories API");
 });
 
 /* Mongoose Setup */
